@@ -1,0 +1,64 @@
+:root {
+  color-scheme: light dark;
+  --ink: #24372f;
+  --muted: #607068;
+  --paper: #fffaf5;
+  --wash: #f8e9e1;
+  --accent: #dd6b38;
+  --line: rgba(36, 55, 47, 0.14);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+a { color: inherit; text-underline-offset: 0.18em; }
+.wrap { width: min(760px, calc(100% - 40px)); margin: 0 auto; }
+.site-header, .site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px max(20px, calc((100% - 760px) / 2));
+}
+.site-header { border-bottom: 1px solid var(--line); }
+.site-footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 750; text-decoration: none; }
+.mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--accent);
+  border-radius: 10px;
+  transform: rotate(8deg);
+}
+nav { display: flex; flex-wrap: wrap; gap: 16px; font-size: 15px; }
+main { padding: 72px 0 88px; }
+.eyebrow { color: var(--accent); font-size: 14px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+h1 { max-width: 720px; margin: 12px 0 20px; font-size: clamp(40px, 8vw, 72px); line-height: 1.04; letter-spacing: -.045em; }
+.article h1 { font-size: clamp(36px, 6vw, 56px); }
+.lede { max-width: 650px; color: var(--muted); font-size: 20px; }
+.actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 42px; }
+.actions a { display: flex; justify-content: space-between; gap: 20px; padding: 22px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.42); text-decoration: none; }
+.actions small { display: block; color: var(--muted); margin-top: 4px; }
+.language-note { margin-top: 34px; color: var(--muted); font-size: 14px; }
+.article header { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.article section { padding: 28px 0 4px; }
+h2 { margin: 0 0 10px; font-size: 24px; letter-spacing: -.02em; }
+h3 { margin: 24px 0 6px; font-size: 18px; }
+p, ul { margin: 0 0 14px; }
+.notice { padding: 16px 18px; background: var(--wash); border-radius: 16px; }
+@media (max-width: 600px) {
+  .site-header, .site-footer { align-items: flex-start; flex-direction: column; }
+  main { padding-top: 48px; }
+  .actions { grid-template-columns: 1fr; }
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #eef4f0; --muted: #a7b4ad; --paper: #142019; --wash: #30241e; --line: rgba(238,244,240,.15); }
+  .actions a { background: rgba(255,255,255,.035); }
+}
