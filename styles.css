@@ -62,3 +62,7 @@ p, ul { margin: 0 0 14px; }
   :root { --ink: #eef4f0; --muted: #a7b4ad; --paper: #142019; --wash: #30241e; --line: rgba(238,244,240,.15); }
   .actions a { background: rgba(255,255,255,.035); }
 }
+
+.path-page { min-height: calc(100vh - 180px); }
+.actions a.primary { background: var(--ink); color: var(--paper); }
+.actions a.primary small { color: rgba(255,250,245,.72); }
